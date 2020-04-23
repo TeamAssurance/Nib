@@ -1,8 +1,9 @@
 {
-  "name": "nib-core",
-  "version": "2.5.2",
+  "name": "ta-nib-core",
+  "version": "2.5.10",
   "description": "Wysiwyg editor",
   "main": "./index.js",
+  "module": "./esm/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/nib-edit/Nib.git"

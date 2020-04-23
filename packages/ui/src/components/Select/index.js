@@ -13,7 +13,7 @@ const DropdownIndicator = props => (
   </components.DropdownIndicator>
 );
 
-const Select = ({ selectedOption, theme, ...rest }) => (
+const Select = ({ selectedOption = {}, theme, ...rest }) => (
   <ReactSelect
     components={{ Option, DropdownIndicator }}
     styles={getSelectStyles(theme)}
@@ -22,11 +22,15 @@ const Select = ({ selectedOption, theme, ...rest }) => (
   />
 );
 
+Select.defaultProps = {
+  selectedOption: {}
+}
+
 Select.propTypes = {
   selectedOption: PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.object
-  }).isRequired,
+  }),
   theme: PropTypes.shape({
     select: PropTypes.object
   }).isRequired

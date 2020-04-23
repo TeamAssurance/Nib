@@ -13,7 +13,7 @@ class EditPopup extends PureComponent {
     super(props);
     const link = this.getLink();
     this.state = {
-      href: link.href
+      href: link && link.href
     };
   }
 

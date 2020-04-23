@@ -1,4 +1,5 @@
 export default {
+  editable: () => true,
   plugins: {
     options: "block inline color link list image video table help",
     image: {

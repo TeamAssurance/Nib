@@ -14,7 +14,7 @@ const link = {
     }
   ],
   toDOM(node) {
-    return ["a", node.attrs, 0];
+    return ["a", {...node.attrs, target: '_blank', rel: 'noopener noreferrer'}, 0];
   }
 };
 

@@ -19,7 +19,7 @@ const Editor = ({
 }) => {
   const editorRef = useRef(null);
   const {
-    config: { plugins },
+    config: { plugins, editable },
     dispatcher,
   } = useConfigContext();
   let [view] = useState();
@@ -38,6 +38,7 @@ const Editor = ({
     ).concat(addons);
     const state = buildEditorState(pluginList, defaultValue, viewProvider);
     view = new EditorView(editorRef.current, {
+      editable,
       state,
       dispatchTransaction: tr => {
         let editorState = view.state.apply(tr);

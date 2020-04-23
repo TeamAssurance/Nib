@@ -56,7 +56,7 @@ class CreatePopup extends PureComponent {
         .addMark(
           $from.pos,
           $from.pos + linkText.length,
-          state.schema.marks.link.create({ href })
+          state.schema.marks.link.create({ href:  !href.match(/^[a-zA-Z]+:\/\//) ?  `http://${href}` : href })
         )
     );
     pmview.focus();
@@ -100,7 +100,7 @@ class CreatePopup extends PureComponent {
                 error={linkTextRequiredError}
               />
               <Input
-                placeholder="Href"
+                placeholder="https://example.com"
                 name="href"
                 onChange={this.updateValue}
                 onKeyPress={this.handleKeyDown}
